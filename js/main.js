@@ -1,5 +1,6 @@
 var isMenuOpen = false;
 var toggleElements;
+var currentTab;
 
 $(function () {
 
@@ -7,11 +8,30 @@ $(function () {
         $('#main'),
         $('header'),
         $('#menu-overlay'),
-        $('#front-content')
+        $('#front-content'),
+        $('.item-holder'),
+        $('#underline-bar')
     ];
 
     $('#menu-overlay').click(toggleMenu);
-    $('#menu').click(toggleMenu);
+    $('#menu a').click(function () {
+        var link = $(this).attr('href');
+
+        // Move the underline bar
+        $('#underline-bar').css({
+            left: $(this).offset().left,
+            width: $(this).width() + 40
+        });
+
+        if (currentTab && currentTab != link) {
+            // Retain the menu
+            currentTab = link;
+        } else {
+            currentTab = link;
+            toggleMenu();
+        }
+
+    });
 });
 
 function openMenu() {
@@ -28,6 +48,8 @@ function closeMenu() {
         element.removeClass('open-menu');
     });
     $('#menu-overlay').hide();
+    $('#underline-bar').css({width: 0});
+    currentTab = false;
 }
 
 function toggleMenu() {
