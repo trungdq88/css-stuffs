@@ -26,7 +26,7 @@ function getElementPosition(array, anchor, element) {
 }
 
 function moveUnderline() {
-    $('#underline-bar').css({
+    $currentTab && $('#underline-bar').css({
         left: $currentTab.offset().left,
         width: $currentTab.width() + 40
     });
