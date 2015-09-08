@@ -46,3 +46,145 @@ body {
   -ms-transition-delay: @delay;
   -o-transition-delay: @delay;
 }
+
+// Page
+@header-height: 50px;
+@section-1-color: #6dcff6;
+
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: @header-height;
+  background-color: rgba(255,255,255,0.5);
+  padding: 0 70px;
+  #brand {
+    flex-grow: 1;
+    height: @header-height;
+    line-height: @header-height;
+    font-family: 'oswaldregular', serif;
+    color: #7B7B7B;
+    font-size: 25px;
+  }
+  #links {
+    flex-grow: 9;
+  }
+}
+
+
+ul#menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  li {
+    display: block;
+    height: @header-height;
+    line-height: @header-height;
+    a {
+      font-family: 'oswaldregular', serif;
+      display: block;
+      text-decoration: none;
+      height: @header-height;
+      line-height: @header-height;
+      color: #000;
+      font-size: 19px;
+      padding: 0 15px;
+
+      &:hover {
+        color: #555555;
+      }
+    }
+  }
+}
+
+section {
+  height: 780px;
+  text-align: center;
+  padding: 100px 0;
+  h1 {
+    font-family: 'oswaldregular', serif;
+    margin: 0 auto;
+    font-size: 60px;
+    width: 900px;
+  }
+  h2 {
+    font-family: 'montserratlight', serif;
+    color: #fff;
+    margin: 0 auto;
+    font-size: 24px;
+    width: 800px;
+  }
+
+  &#section-1 {
+    background-color: @section-1-color;
+  }
+}
+
+.cols {
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+  .col {
+    margin: 0 44px;
+    .img-wrapper {
+      @img-size: 150px;
+      height: @img-size;
+      width: @img-size;
+      border-radius: @img-size / 2;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    p {
+      font-family: 'montserratregular', serif;
+      color: #fff;
+      font-size: 18px;
+    }
+  }
+}
+
+.input-box {
+  @input-height: 72px;
+  display: flex;
+  justify-content: center;
+  input[type=text] {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 0;
+    height: @input-height;
+    line-height: @input-height;
+    padding: 0 20px;
+    border-radius: 10px 0 0 10px;
+    width: 500px;
+    font-family: 'montserratlight', serif;
+    &:focus {
+      outline: 0;
+    }
+  }
+  button {
+    border: 0;
+    height: @input-height;
+    line-height: @input-height;
+    padding: 0 20px;
+    background-color: #fff;
+    font-family: 'montserratregular', serif;
+    color: #09a7e6;
+    border-radius: 0 10px 10px 0;
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    -ms-transition: all 300ms;
+    -o-transition: all 300ms;
+    transition: all 300ms;
+    &:hover {
+      background-color: #09a7e6;
+      color: #fff;
+    }
+    &:focus {
+      outline: 0;
+    }
+  }
+}
