@@ -93,8 +93,13 @@ $(function () {
 function openMenu() {
     $('#menu-overlay').show();
     toggleElements.forEach(function (element) {
-        element.removeClass('no-back-anim');
-        element.addClass('open-menu');
+        // This operation will redraw all the #main element,
+        // so let's make it better by draw it at the beginning
+        // of the frame by using requestAnimationFrame
+        requestAnimationFrame(function () {
+            element.removeClass('no-back-anim');
+            element.addClass('open-menu');
+        });
     });
 }
 
