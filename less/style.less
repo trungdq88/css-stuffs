@@ -1,3 +1,12 @@
+// Utils
+.nth-child-delay-loop(@counter) when (@counter > 0) {
+  .nth-child-delay-loop((@counter - 1));    // next iteration
+  &:nth-child(@{counter}) {
+
+    .transition-delay(50ms + 20 * @counter); // code for each iteration
+  }
+}
+
 // Globals
 * {
   box-sizing: border-box;
@@ -111,13 +120,13 @@ header {
   height: @header-height;
   background: #e1eff5;
   position: relative;
+  display: flex;
   .fancy-timing-function();
   &.open-menu {
     height: @header-height - 10px;
   }
   #brand {
-    width: 20%;
-    float: left;
+    flex-grow: 1;
     height: @header-height;
     line-height: @header-height;
     padding-left: @header-side-padding;
@@ -126,14 +135,11 @@ header {
     font-size: 25px;
   }
   nav {
-    width: 60%;
-    float: left;
-    text-align: center;
+    flex-grow: 5;
     height: @header-height;
   }
   #links {
-    width: 20%;
-    float: left;
+    flex-grow: 1;
     text-align: right;
     height: @header-height;
     line-height: @header-height;
@@ -160,6 +166,7 @@ header {
 .item-holder {
   display: flex;
   justify-content: center;
+  height: @back-content-height;
   width: 100%;
   position: absolute;
   overflow: hidden;
@@ -168,13 +175,14 @@ header {
     display: none;
   }
 
+  @safe-away-distance: 1200px;
   &.move-left .item-block {
     // override the translate3d from &.open-menu .item-block
-    transform: translate3d(-1000px, 0, 0) !important;
+    transform: translate3d(-@safe-away-distance, 0, 0) !important;
   }
   &.move-right .item-block {
     // override the translate3d from &.open-menu .item-block
-    transform: translate3d(1000px, 0, 0) !important;
+    transform: translate3d(@safe-away-distance, 0, 0) !important;
   }
   .item-block {
     .fancy-timing-function();
@@ -203,15 +211,8 @@ header {
         width: 0;
       }
     }
-    &:nth-child(1) {
-      .transition-delay(70ms);
-    }
-    &:nth-child(2) {
-      .transition-delay(90ms);
-    }
-    &:nth-child(3) {
-      .transition-delay(110ms);
-    }
+    @max-item-block: 16;
+    .nth-child-delay-loop(@max-item-block);
     h2 {
       font-family: 'oswaldlight', serif;
       text-transform: uppercase;
@@ -284,6 +285,71 @@ header {
   }
 }
 
+
+.item-holder.grid {
+  flex-flow: column wrap;
+  align-content: center;
+  padding: 20px;
+  .item-block {
+    width: 200px;
+    height: 130px;
+    padding-top: 20px;
+    border: 1px solid #ccc;
+    &:before {
+      width: 0;
+    }
+    &:after {
+      width: 0;
+    }
+    h2 {
+      font-size: 45px;
+    }
+    p {
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    .decorate-bar {
+      left: 0;
+    }
+    &:first-child {
+      border: 0;
+      border-right: 1px solid #ccc;
+    }
+    &:nth-child(2) {
+      border-left: 0;
+      border-bottom: 0;
+      border-right: 1px solid #ccc;
+    }
+    &:nth-child(odd) {
+      border-left: 0;
+      border-top: 0;
+      border-bottom: 0;
+    }
+    &:nth-child(even) {
+      border-bottom: 0;
+      border-left: 0;
+    }
+    &:nth-last-child(2) {
+      border: 0;
+    }
+    &:last-child {
+      border-bottom: 0;
+      border-right: 0;
+      border-left: 0;
+    }
+    .block-link {
+      margin-top: 60px;
+    }
+    &:hover {
+      h2 {
+        margin-top: -10px;
+      }
+      p {
+        margin-top: -5px;
+      }
+    }
+  }
+}
 #main {
   background: #fff;
   padding: 70px 100px;
@@ -332,13 +398,13 @@ header {
 
 
 ul#menu {
-  display: inline-block;
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  justify-content: center;
   li {
     display: block;
-    float: left;
     height: @header-height;
     line-height: @header-height;
     a {

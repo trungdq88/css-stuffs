@@ -1,6 +1,20 @@
 var isMenuOpen = false;
+/**
+ * Array of element that will change when trigger open/close menu
+ */
 var toggleElements;
-var currentTab;
+/**
+ * Id of current open tab, `false` when menu is closed.
+ */
+var currentTabId;
+/**
+ * Element of current open tab, `false` when menu is closed.
+ */
+var $currentTab;
+/**
+ * Array of string represents list of tabs
+ */
+var tabs;
 
 function getElementPosition(array, anchor, element) {
     for (var i = 0; i < array.length; i++) {
@@ -11,9 +25,15 @@ function getElementPosition(array, anchor, element) {
     return 'unknown';
 }
 
+function moveUnderline() {
+    $('#underline-bar').css({
+        left: $currentTab.offset().left,
+        width: $currentTab.width() + 40
+    });
+}
 $(function () {
 
-    var tabs = $('.tab-item').map(function (index, el) {
+    tabs = $('.tab-item').map(function (index, el) {
         return el.getAttribute('href').replace('#', '');
     });
 
@@ -50,20 +70,23 @@ $(function () {
         });
 
         // Move the underline bar
-        $('#underline-bar').css({
-            left: $(this).offset().left,
-            width: $(this).width() + 40
-        });
+        $currentTab = $(this);
+        moveUnderline();
 
         // Decide to close the menu or switch to other tabs
-        if (currentTab && currentTab != tabId) {
+        if (currentTabId && currentTabId != tabId) {
             // Move to other tabs
-            currentTab = tabId;
+            currentTabId = tabId;
         } else {
-            currentTab = tabId;
+            currentTabId = tabId;
             toggleMenu();
         }
 
+    });
+
+    // Make sure underline changes when window size is changed
+    $(window).resize(function () {
+        moveUnderline();
     });
 });
 
@@ -84,7 +107,17 @@ function closeMenu() {
     $('#underline-bar').css({
         width: 0
     });
-    currentTab = false;
+    currentTabId = false;
+    $currentTab = false;
+
+    // Hide all tabs content
+    // 2. Move other tabs to their right position
+    $('.item-holder').each(function (index, el) {
+        setTimeout(function () {
+            $(el).removeClass('move-left').removeClass('move-right');
+            $(el).addClass('hide');
+        }, 300);
+    });
 }
 
 function toggleMenu() {
@@ -94,16 +127,4 @@ function toggleMenu() {
         closeMenu();
     }
     isMenuOpen = !isMenuOpen;
-}
-
-function moveTab() {
-    $('#holder-1').addClass('move-left');
-    setTimeout(function () {
-        $('#holder-1').addClass('hide');
-    }, 100);
-    $('#holder-2').removeClass('hide');
-    setTimeout(function () {
-        $('#holder-2').removeClass('move-right');
-    }, 100);
-
 }
