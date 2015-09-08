@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0 70px;
+}
+header #brand {
+  flex-grow: 1;
+  height: 50px;
+  line-height: 50px;
+  font-family: 'oswaldregular', serif;
+  color: #7B7B7B;
+  font-size: 25px;
+}
+header #links {
+  flex-grow: 9;
+}
+ul#menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+ul#menu li {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+}
+ul#menu li a {
+  font-family: 'oswaldregular', serif;
+  display: block;
+  text-decoration: none;
+  height: 50px;
+  line-height: 50px;
+  color: #000;
+  font-size: 19px;
+  padding: 0 15px;
+}
+ul#menu li a:hover {
+  color: #555555;
+}
+section {
+  text-align: center;
+  padding: 100px 0;
+  min-height: 800px;
+}
+section h1 {
+  font-family: 'oswaldregular', serif;
+  margin: 0 auto;
+  font-size: 60px;
+  width: 900px;
+}
+section h2 {
+  font-family: 'montserratlight', serif;
+  color: #fff;
+  margin: 0 auto;
+  font-size: 24px;
+  width: 800px;
+  opacity: 0.8;
+}
+section h2.type2 {
+  color: #000;
+}
+section#section-1 {
+  background-color: #6dcff6;
+}
+section#section-2 {
+  background-color: #c4df9b;
+}
+section#section-3 {
+  background-color: #ff6a72;
+}
+section#section-4 {
+  background-color: #bd8cbf;
+}
+section#section-5 {
+  background-color: #ffffff;
+}
+.cols {
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+}
+.cols .col {
+  margin: 0 44px;
+}
+.cols .col.type2 {
+  width: 300px;
+  margin: 0 10px;
+}
+.cols .col p {
+  font-family: 'montserratregular', serif;
+  color: #fff;
+  font-size: 18px;
+}
+.head-line {
+  text-transform: uppercase;
+  color: #000;
+  font-family: 'montserratregular', serif;
+}
+.description {
+  font-family: 'montserratlight', serif;
+  color: #000;
+  font-size: 15px;
+}
+.description.narrow {
+  width: 600px;
+  margin: 100px auto;
+}
+.white {
+  color: #fff !important;
+}
+.img-wrapper {
+  height: 150px;
+  width: 150px;
+  border-radius: 75px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 3px solid #fff;
+}
+.input-box {
+  display: flex;
+  justify-content: center;
+}
+.input-box input[type=text] {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 0;
+  height: 72px;
+  line-height: 72px;
+  padding: 0 20px;
+  border-radius: 10px 0 0 10px;
+  width: 500px;
+  font-family: 'montserratlight', serif;
+}
+.input-box input[type=text]:focus {
+  outline: 0;
+}
+.input-box button {
+  border: 0;
+  height: 72px;
+  line-height: 72px;
+  padding: 0 20px;
+  background-color: #fff;
+  font-family: 'montserratregular', serif;
+  color: #09a7e6;
+  border-radius: 0 10px 10px 0;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  -ms-transition: all 300ms;
+  -o-transition: all 300ms;
+  transition: all 300ms;
+}
+.input-box button:hover {
+  background-color: #09a7e6;
+  color: #fff;
+}
+.input-box button:focus {
+  outline: 0;
+}
+.journey {
+  height: 500px;
+  width: 900px;
+  margin: 20px auto 0;
+  position: relative;
+}
+.journey .arrow {
+  position: absolute;
+  background-size: 100% 100%;
+  overflow: hidden;
+  background-position: center center;
+}
+.journey .arrow#arrow-1 {
+  width: 480px;
+  height: 80px;
+  left: 200px;
+  top: 10px;
+}
+.journey .arrow#arrow-2 {
+  width: 160px;
+  height: 90px;
+  top: 300px;
+  left: 530px;
+}
+.journey .arrow#arrow-3 {
+  width: 160px;
+  height: 90px;
+  top: 300px;
+  left: 200px;
+}
+.journey .block {
+  position: absolute;
+  width: 250px;
+}
+.journey .block p {
+  margin: 0;
+}
+.journey .block#block-1 {
+  left: 100px;
+  top: 75px;
+}
+.journey .block#block-2 {
+  left: 550px;
+  top: 75px;
+}
+.journey .block#block-3 {
+  left: 325px;
+  top: 275px;
+}
+.journey .canvas-image {
+  width: 120px;
+  height: 120px;
+  background-size: cover;
+  overflow: hidden;
+  background-position: center center;
+  margin: 0 auto;
+}
+.nice-button {
+  background-color: #6dcff6;
+  border: 0;
+  border-radius: 10px;
+  padding: 20px 30px;
+  color: #fff;
+  font-size: 22px;
+  font-family: 'montserratregular', serif;
+}
