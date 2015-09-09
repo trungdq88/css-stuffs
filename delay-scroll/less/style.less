@@ -51,6 +51,13 @@ body {
 @section-4-color: #bd8cbf;
 @section-5-color: #ffffff;
 
+@zindex-header: 6;
+@zindex-section1: 5;
+@zindex-section2: 4;
+@zindex-section3: 3;
+@zindex-section4: 2;
+@zindex-section5: 1;
+
 header {
   display: flex;
   position: fixed;
@@ -60,7 +67,7 @@ header {
   height: @header-height;
   background-color: rgba(255,255,255,0.5);
   padding: 0 70px;
-  z-index: 1;
+  z-index: @zindex-header;
   .force-new-layer();
   #brand {
     flex-grow: 1;
@@ -105,8 +112,16 @@ ul#menu {
 
 section {
   text-align: center;
-  padding: 100px 0;
-  height: @section-height;
+  padding: 80px 0;
+  bottom: 10vh;
+  overflow: hidden;
+  &.no-animate {
+    -webkit-transition: none;
+    -moz-transition: none  ;
+    -ms-transition: none  ;
+    -o-transition: none  ;
+    transition: none  ;
+  }
   h1 {
     font-family: 'oswaldregular', serif;
     margin: 0 auto;
@@ -127,23 +142,28 @@ section {
 
   &#section1 {
     background-color: @section-1-color;
+    z-index: @zindex-section1;
   }
   &#section2 {
     background-color: @section-2-color;
+    z-index: @zindex-section2;
   }
   &#section3 {
     background-color: @section-3-color;
+    z-index: @zindex-section3;
   }
   &#section4 {
     background-color: @section-4-color;
+    z-index: @zindex-section4;
   }
   &#section5 {
     background-color: @section-5-color;
+    z-index: @zindex-section5;
   }
 }
 
 .cols {
-  margin: 50px auto;
+  margin: 50px auto 10px;
   display: flex;
   justify-content: center;
   .col {
@@ -310,4 +330,53 @@ section {
   width: 100%;
   .fancy-timing-function();
   .force-new-layer();
+}
+
+.smooth-item-delay-loop(@counter) when (@counter > 0) {
+  .smooth-item-delay-loop((@counter - 1));    // next iteration
+  &.delay-@{counter} {
+    .transition-delay(80ms * @counter); // code for each iteration
+  }
+}
+.smooth-item-delay-loop-backward(@counter) when (@counter > 0) {
+  .smooth-item-delay-loop-backward((@counter - 1));    // next iteration
+  &.delay-@{counter} {
+    .transition-delay(800 - 80ms * @counter); // code for each iteration
+  }
+}
+.smooth-item {
+  .fancy-timing-function();
+  .force-new-layer();
+  .smooth-item-delay-loop(10);
+
+}
+
+
+.smooth-effect {
+  &.above .smooth-item {
+    -webkit-transform: translate3d(0, -1000px, 0);
+    -moz-transform: translate3d(0, -1000px, 0);
+    -ms-transform: translate3d(0, -1000px, 0);
+    -o-transform: translate3d(0, -1000px, 0);
+    transform: translate3d(0, -1000px, 0);
+  }
+  &.bellow .smooth-item {
+    -webkit-transform: translate3d(0, 1000px, 0);
+    -moz-transform: translate3d(0, 1000px, 0);
+    -ms-transform: translate3d(0, 1000px, 0);
+    -o-transform: translate3d(0, 1000px, 0);
+    transform: translate3d(0, 1000px, 0);
+  }
+
+  &.show .smooth-item {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  &.backward .smooth-item {
+    .smooth-item-delay-loop-backward(10);
+  }
+
 }

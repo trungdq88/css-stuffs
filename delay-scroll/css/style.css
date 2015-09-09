@@ -17,7 +17,7 @@ header {
   height: 50px;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 0 70px;
-  z-index: 1;
+  z-index: 6;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
@@ -62,8 +62,16 @@ ul#menu li a:hover {
 }
 section {
   text-align: center;
-  padding: 100px 0;
-  height: 700px;
+  padding: 80px 0;
+  bottom: 10vh;
+  overflow: hidden;
+}
+section.no-animate {
+  -webkit-transition: none;
+  -moz-transition: none  ;
+  -ms-transition: none  ;
+  -o-transition: none  ;
+  transition: none  ;
 }
 section h1 {
   font-family: 'oswaldregular', serif;
@@ -84,21 +92,26 @@ section h2.type2 {
 }
 section#section1 {
   background-color: #6dcff6;
+  z-index: 5;
 }
 section#section2 {
   background-color: #c4df9b;
+  z-index: 4;
 }
 section#section3 {
   background-color: #ff6a72;
+  z-index: 3;
 }
 section#section4 {
   background-color: #bd8cbf;
+  z-index: 2;
 }
 section#section5 {
   background-color: #ffffff;
+  z-index: 1;
 }
 .cols {
-  margin: 50px auto;
+  margin: 50px auto 10px;
   display: flex;
   justify-content: center;
 }
@@ -271,4 +284,186 @@ section {
   -ms-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+}
+.smooth-item {
+  -webkit-transition: all 1000ms cubic-bezier(0.745, 0, 0.22, 0.995);
+  /* older webkit */
+  -webkit-transition: all 1000ms cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  -moz-transition: all 1000ms cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  -o-transition: all 1000ms cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  transition: all 1000ms cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  /* custom */
+  -webkit-transition-timing-function: cubic-bezier(0.745, 0, 0.22, 0.995);
+  /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  -moz-transition-timing-function: cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  -o-transition-timing-function: cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  transition-timing-function: cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  /* custom */
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.smooth-item.delay-1 {
+  transition-delay: 80ms;
+  -webkit-transition-delay: 80ms;
+  -moz-transition-delay: 80ms;
+  -ms-transition-delay: 80ms;
+  -o-transition-delay: 80ms;
+}
+.smooth-item.delay-2 {
+  transition-delay: 160ms;
+  -webkit-transition-delay: 160ms;
+  -moz-transition-delay: 160ms;
+  -ms-transition-delay: 160ms;
+  -o-transition-delay: 160ms;
+}
+.smooth-item.delay-3 {
+  transition-delay: 240ms;
+  -webkit-transition-delay: 240ms;
+  -moz-transition-delay: 240ms;
+  -ms-transition-delay: 240ms;
+  -o-transition-delay: 240ms;
+}
+.smooth-item.delay-4 {
+  transition-delay: 320ms;
+  -webkit-transition-delay: 320ms;
+  -moz-transition-delay: 320ms;
+  -ms-transition-delay: 320ms;
+  -o-transition-delay: 320ms;
+}
+.smooth-item.delay-5 {
+  transition-delay: 400ms;
+  -webkit-transition-delay: 400ms;
+  -moz-transition-delay: 400ms;
+  -ms-transition-delay: 400ms;
+  -o-transition-delay: 400ms;
+}
+.smooth-item.delay-6 {
+  transition-delay: 480ms;
+  -webkit-transition-delay: 480ms;
+  -moz-transition-delay: 480ms;
+  -ms-transition-delay: 480ms;
+  -o-transition-delay: 480ms;
+}
+.smooth-item.delay-7 {
+  transition-delay: 560ms;
+  -webkit-transition-delay: 560ms;
+  -moz-transition-delay: 560ms;
+  -ms-transition-delay: 560ms;
+  -o-transition-delay: 560ms;
+}
+.smooth-item.delay-8 {
+  transition-delay: 640ms;
+  -webkit-transition-delay: 640ms;
+  -moz-transition-delay: 640ms;
+  -ms-transition-delay: 640ms;
+  -o-transition-delay: 640ms;
+}
+.smooth-item.delay-9 {
+  transition-delay: 720ms;
+  -webkit-transition-delay: 720ms;
+  -moz-transition-delay: 720ms;
+  -ms-transition-delay: 720ms;
+  -o-transition-delay: 720ms;
+}
+.smooth-item.delay-10 {
+  transition-delay: 800ms;
+  -webkit-transition-delay: 800ms;
+  -moz-transition-delay: 800ms;
+  -ms-transition-delay: 800ms;
+  -o-transition-delay: 800ms;
+}
+.smooth-effect.above .smooth-item {
+  -webkit-transform: translate3d(0, -1000px, 0);
+  -moz-transform: translate3d(0, -1000px, 0);
+  -ms-transform: translate3d(0, -1000px, 0);
+  -o-transform: translate3d(0, -1000px, 0);
+  transform: translate3d(0, -1000px, 0);
+}
+.smooth-effect.bellow .smooth-item {
+  -webkit-transform: translate3d(0, 1000px, 0);
+  -moz-transform: translate3d(0, 1000px, 0);
+  -ms-transform: translate3d(0, 1000px, 0);
+  -o-transform: translate3d(0, 1000px, 0);
+  transform: translate3d(0, 1000px, 0);
+}
+.smooth-effect.show .smooth-item {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.smooth-effect.backward .smooth-item.delay-1 {
+  transition-delay: 720ms;
+  -webkit-transition-delay: 720ms;
+  -moz-transition-delay: 720ms;
+  -ms-transition-delay: 720ms;
+  -o-transition-delay: 720ms;
+}
+.smooth-effect.backward .smooth-item.delay-2 {
+  transition-delay: 640ms;
+  -webkit-transition-delay: 640ms;
+  -moz-transition-delay: 640ms;
+  -ms-transition-delay: 640ms;
+  -o-transition-delay: 640ms;
+}
+.smooth-effect.backward .smooth-item.delay-3 {
+  transition-delay: 560ms;
+  -webkit-transition-delay: 560ms;
+  -moz-transition-delay: 560ms;
+  -ms-transition-delay: 560ms;
+  -o-transition-delay: 560ms;
+}
+.smooth-effect.backward .smooth-item.delay-4 {
+  transition-delay: 480ms;
+  -webkit-transition-delay: 480ms;
+  -moz-transition-delay: 480ms;
+  -ms-transition-delay: 480ms;
+  -o-transition-delay: 480ms;
+}
+.smooth-effect.backward .smooth-item.delay-5 {
+  transition-delay: 400ms;
+  -webkit-transition-delay: 400ms;
+  -moz-transition-delay: 400ms;
+  -ms-transition-delay: 400ms;
+  -o-transition-delay: 400ms;
+}
+.smooth-effect.backward .smooth-item.delay-6 {
+  transition-delay: 320ms;
+  -webkit-transition-delay: 320ms;
+  -moz-transition-delay: 320ms;
+  -ms-transition-delay: 320ms;
+  -o-transition-delay: 320ms;
+}
+.smooth-effect.backward .smooth-item.delay-7 {
+  transition-delay: 240ms;
+  -webkit-transition-delay: 240ms;
+  -moz-transition-delay: 240ms;
+  -ms-transition-delay: 240ms;
+  -o-transition-delay: 240ms;
+}
+.smooth-effect.backward .smooth-item.delay-8 {
+  transition-delay: 160ms;
+  -webkit-transition-delay: 160ms;
+  -moz-transition-delay: 160ms;
+  -ms-transition-delay: 160ms;
+  -o-transition-delay: 160ms;
+}
+.smooth-effect.backward .smooth-item.delay-9 {
+  transition-delay: 80ms;
+  -webkit-transition-delay: 80ms;
+  -moz-transition-delay: 80ms;
+  -ms-transition-delay: 80ms;
+  -o-transition-delay: 80ms;
+}
+.smooth-effect.backward .smooth-item.delay-10 {
+  transition-delay: 0ms;
+  -webkit-transition-delay: 0ms;
+  -moz-transition-delay: 0ms;
+  -ms-transition-delay: 0ms;
+  -o-transition-delay: 0ms;
 }
