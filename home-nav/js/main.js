@@ -26,9 +26,10 @@ function getElementPosition(array, anchor, element) {
 }
 
 function moveUnderline() {
+    var scale = ($currentTab.width() + 40) / 100;
     $currentTab && $('#underline-bar').css({
-        left: $currentTab.offset().left,
-        width: $currentTab.width() + 40
+        webkitTransform: 'translate3d(' + $currentTab.offset().left + 'px,0,0) ' +
+        'scaleX(' + scale + ')'
     });
 }
 $(function () {
@@ -91,13 +92,14 @@ $(function () {
 });
 
 function openMenu() {
-    $('#menu-overlay').show();
-    toggleElements.forEach(function (element) {
-        // This operation will redraw all the #main element,
-        // so let's make it better by draw it at the beginning
-        // of the frame by using requestAnimationFrame
-        requestAnimationFrame(function () {
-            element.removeClass('no-back-anim');
+    // This operation will redraw all the #main element,
+    // so let's make it better by draw it at the beginning
+    // of the frame by using requestAnimationFrame
+    requestAnimationFrame(function () {
+        toggleElements.forEach(function (element) {
+            if (element != toggleElements[2]) { // don't use no-back-anim for #menu-overlay
+                element.removeClass('no-back-anim');
+            }
             element.addClass('open-menu');
         });
     });
@@ -105,10 +107,11 @@ function openMenu() {
 
 function closeMenu() {
     toggleElements.forEach(function (element) {
-        element.addClass('no-back-anim');
+        if (element != toggleElements[2]) { // don't use no-back-anim for #menu-overlay
+            element.addClass('no-back-anim');
+        }
         element.removeClass('open-menu');
     });
-    $('#menu-overlay').hide();
     $('#underline-bar').css({
         width: 0
     });
