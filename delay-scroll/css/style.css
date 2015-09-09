@@ -17,6 +17,12 @@ header {
   height: 50px;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 0 70px;
+  z-index: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 header #brand {
   flex-grow: 1;
@@ -57,7 +63,7 @@ ul#menu li a:hover {
 section {
   text-align: center;
   padding: 100px 0;
-  min-height: 800px;
+  height: 700px;
 }
 section h1 {
   font-family: 'oswaldregular', serif;
@@ -76,19 +82,19 @@ section h2 {
 section h2.type2 {
   color: #000;
 }
-section#section-1 {
+section#section1 {
   background-color: #6dcff6;
 }
-section#section-2 {
+section#section2 {
   background-color: #c4df9b;
 }
-section#section-3 {
+section#section3 {
   background-color: #ff6a72;
 }
-section#section-4 {
+section#section4 {
   background-color: #bd8cbf;
 }
-section#section-5 {
+section#section5 {
   background-color: #ffffff;
 }
 .cols {
@@ -176,7 +182,7 @@ section#section-5 {
   outline: 0;
 }
 .journey {
-  height: 500px;
+  height: 450px;
   width: 900px;
   margin: 20px auto 0;
   position: relative;
@@ -189,20 +195,20 @@ section#section-5 {
 }
 .journey .arrow#arrow-1 {
   width: 480px;
-  height: 80px;
+  height: 72px;
   left: 200px;
-  top: 10px;
+  top: 9px;
 }
 .journey .arrow#arrow-2 {
   width: 160px;
-  height: 90px;
-  top: 300px;
+  height: 81px;
+  top: 270px;
   left: 530px;
 }
 .journey .arrow#arrow-3 {
   width: 160px;
-  height: 90px;
-  top: 300px;
+  height: 81px;
+  top: 270px;
   left: 200px;
 }
 .journey .block {
@@ -214,15 +220,15 @@ section#section-5 {
 }
 .journey .block#block-1 {
   left: 100px;
-  top: 75px;
+  top: 55px;
 }
 .journey .block#block-2 {
   left: 550px;
-  top: 75px;
+  top: 55px;
 }
 .journey .block#block-3 {
   left: 325px;
-  top: 275px;
+  top: 235px;
 }
 .journey .canvas-image {
   width: 120px;
@@ -240,4 +246,29 @@ section#section-5 {
   color: #fff;
   font-size: 22px;
   font-family: 'montserratregular', serif;
+}
+section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transition: all 1000ms cubic-bezier(0.745, 0, 0.22, 0.995);
+  /* older webkit */
+  -webkit-transition: all 1000ms cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  -moz-transition: all 1000ms cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  -o-transition: all 1000ms cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  transition: all 1000ms cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  /* custom */
+  -webkit-transition-timing-function: cubic-bezier(0.745, 0, 0.22, 0.995);
+  /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  -moz-transition-timing-function: cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  -o-transition-timing-function: cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  transition-timing-function: cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  /* custom */
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
