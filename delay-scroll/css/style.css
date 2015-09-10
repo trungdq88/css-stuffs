@@ -36,7 +36,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  height: 80px;
+  height: 70px;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 0 100px;
   z-index: 6;
@@ -48,8 +48,8 @@ header {
 }
 header #brand {
   flex-grow: 1;
-  height: 80px;
-  line-height: 80px;
+  height: 70px;
+  line-height: 70px;
   font-family: 'oswaldregular', serif;
   color: #7B7B7B;
   font-size: 25px;
@@ -66,17 +66,17 @@ ul#menu {
 }
 ul#menu li {
   display: block;
-  height: 80px;
-  line-height: 80px;
+  height: 70px;
+  line-height: 70px;
 }
 ul#menu li a {
   font-family: 'oswaldregular', serif;
   display: block;
   text-decoration: none;
-  height: 80px;
-  line-height: 80px;
+  height: 70px;
+  line-height: 70px;
   color: #000;
-  font-size: 28px;
+  font-size: 25px;
   padding: 0 19px;
 }
 ul#menu li a.active {
@@ -84,7 +84,7 @@ ul#menu li a.active {
 }
 section {
   text-align: center;
-  padding-top: 165px;
+  padding-top: 145px;
   bottom: 0;
   overflow: hidden;
 }
@@ -101,23 +101,24 @@ section.no-animate {
 section h1 {
   font-family: 'oswaldregular', serif;
   margin: 0 auto;
-  font-size: 60px;
+  font-size: 54px;
   width: 900px;
 }
 section h1.type2 {
-  font-size: 45px;
+  font-size: 40px;
   margin: 17px auto 0;
 }
 section h2 {
   font-family: 'montserratlight', serif;
   color: #fff;
   margin: 10px auto 0;
-  font-size: 24px;
-  width: 860px;
+  font-size: 20px;
   opacity: 0.8;
+  width: 650px;
 }
 section h2.type2 {
-  font-size: 29px;
+  width: 860px;
+  font-size: 24px;
 }
 section#section1 {
   background-color: #6dcff6;
@@ -140,7 +141,7 @@ section#section5 {
   z-index: 1;
 }
 .cols {
-  margin: 48px auto 10px;
+  margin: 42px auto 10px;
   display: flex;
   justify-content: center;
 }
@@ -154,8 +155,8 @@ section#section5 {
 .cols .col p {
   font-family: 'montserratregular', serif;
   color: #fff;
-  font-size: 19px;
-  margin: 27px 0;
+  font-size: 18px;
+  margin: 20px 0;
 }
 p.small-heading {
   font-family: 'montserratregular', serif;
@@ -166,13 +167,13 @@ p.head-line {
   text-transform: uppercase;
   color: #000;
   font-family: 'montserratregular', serif;
-  font-size: 24px !important;
-  margin-top: 32px !important;
+  font-size: 22px !important;
+  margin-top: 20px !important;
 }
 p.description {
   font-family: 'montserratlight', serif !important;
   color: #000;
-  font-size: 17px;
+  font-size: 15px !important;
   margin: 15px 0;
   width: 270px;
   text-align: center;
@@ -190,9 +191,9 @@ p.description.narrow {
   color: #000 !important;
 }
 .img-wrapper {
-  height: 150px;
-  width: 150px;
-  border-radius: 75px;
+  height: 133px;
+  width: 133px;
+  border-radius: 66.5px;
   margin: 0 auto;
   overflow: hidden;
   background-size: cover;
@@ -201,9 +202,9 @@ p.description.narrow {
   border: 3px solid #fff;
 }
 .img-wrapper.type2 {
-  height: 215px;
-  width: 215px;
-  border-radius: 107.5px;
+  height: 195px;
+  width: 195px;
+  border-radius: 97.5px;
 }
 .input-box {
   margin-top: 50px;
@@ -213,12 +214,12 @@ p.description.narrow {
 .input-box input[type=text] {
   background-color: rgba(255, 255, 255, 0.5);
   border: 0;
-  height: 70px;
-  line-height: 70px;
+  height: 62px;
+  line-height: 62px;
   padding: 0 20px;
   border-radius: 10px 0 0 10px;
-  width: 507px;
-  font-size: 19.6px;
+  width: 450px;
+  font-size: 17px;
   font-family: 'montserratlight', serif;
 }
 .input-box input[type=text]:focus {
@@ -226,9 +227,9 @@ p.description.narrow {
 }
 .input-box button {
   border: 0;
-  font-size: 20px;
-  height: 70px;
-  line-height: 70px;
+  font-size: 17px;
+  height: 62px;
+  line-height: 62px;
   padding: 0 20px;
   background-color: #fff;
   font-family: 'montserratregular', serif;

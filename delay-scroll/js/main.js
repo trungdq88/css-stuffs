@@ -1,4 +1,4 @@
-var SECTION_HEIGHT = 700;
+var SECTION_HEIGHT = 750;
 /**
  * Index of the current section
  * @type {number}
@@ -15,6 +15,19 @@ var sections;
  * Handling scroll
  */
 var lastAnimation;
+
+/**
+ * Viewport size
+ */
+var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+/**
+ * Set bottom variable if viewport is larger than section height
+ */
+var bottomValue = 0;
+if (SECTION_HEIGHT < h) {
+    bottomValue = Math.round(((h - SECTION_HEIGHT) / h) * 100);
+}
 
 function getElementPosition(array, anchor, element) {
     for (var i = 0; i < array.length; i++) {
@@ -38,15 +51,15 @@ function moveSections(isMoveForward) {
         // var timingIndex = index;
         setTimeout(function () {
             $(section).css({
-                top: (- currentSection + index) * 90 + 'vh'
+                top: (- currentSection + index) * (100 - bottomValue) + 'vh'
             });
         }, 100 * timingIndex + (isMoveForward ? 0 : 100));
         setTimeout(function () {
-             var bottom = ((currentSection - index) * 100) + 'vh';
-            // Last section has full height
-            // if (currentSection == sections.length - 1 && index == currentSection) {
-            //     bottom = 0;
-            // }
+             var bottom = ((currentSection - index) * (100 - bottomValue) + bottomValue) + 'vh';
+             // Last section has full height
+             if (currentSection == sections.length - 1 && index == currentSection) {
+                 bottom = 0;
+             }
             $(section).css({
                 bottom: bottom
             });
