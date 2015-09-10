@@ -19,8 +19,8 @@ var lastAnimation;
 /**
  * Viewport size
  */
-var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
-var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 /**
  * Set bottom variable if viewport is larger than section height
  */
@@ -182,7 +182,7 @@ $(function () {
     disableAnimation();
     moveSections();
     handleHashChange();
-    $('body').show();
+    $pageLayout.resolve();
     enableAnimation();
 
     // Bind events

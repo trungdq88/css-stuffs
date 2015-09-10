@@ -18,12 +18,12 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body style="display: none">
+<body>
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
 <![endif]-->
-<header>
+<header style="display: none">
     <div id="brand">
         Brand
     </div>
@@ -37,7 +37,7 @@
         </ul>
     </div>
 </header>
-<div id="main">
+<div id="main" style="display: none">
     <section id="section1" class="smooth-effect">
         <h1 class="smooth-item delay-1">Hi there, we are the pirates from SSS</h1>
 
@@ -195,6 +195,30 @@
     </section>
 </div>
 <script src="js/vendor/jquery-1.11.3.min.js"></script>
+<script>
+    var $pageLayout = $.Deferred();
+    var $fontLoad = $.Deferred();
+    WebFontConfig = {
+        custom: {
+            families: ['montserratlight', 'montserratregular', 'oswaldlight', 'oswaldregular']
+        },
+        active: function () {
+            $fontLoad.resolve();
+        }
+    };
+
+    (function(d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = 'js/vendor/webfont.js';
+        s.parentNode.insertBefore(wf, s);
+    })(document);
+
+    $.when($pageLayout, $fontLoad).done(function () {
+        $('header').show();
+        $('#main').show();
+    })
+</script>
+<script src="js/vendor/webfont.js"></script>
 <script src="js/normalize-wheel.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
