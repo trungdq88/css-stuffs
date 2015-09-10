@@ -8,6 +8,13 @@ body {
   padding: 0;
   margin: 0;
 }
+.no-animate {
+  -webkit-transition: none;
+  -moz-transition: none  ;
+  -ms-transition: none  ;
+  -o-transition: none  ;
+  transition: none  ;
+}
 header {
   display: flex;
   position: fixed;
@@ -602,4 +609,124 @@ section {
   -moz-transition-delay: -960ms;
   -ms-transition-delay: -960ms;
   -o-transition-delay: -960ms;
+}
+.smooth-effect .smooth-item#arrow-1 {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  clip: rect(0px, 0px, 60px, 0px);
+  transition-delay: 1s;
+  -webkit-transition-delay: 1s;
+  -moz-transition-delay: 1s;
+  -ms-transition-delay: 1s;
+  -o-transition-delay: 1s;
+  transition-duration: 500ms;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  -ms-transition-duration: 500ms;
+  -o-transition-duration: 500ms;
+}
+.smooth-effect.show .smooth-item#arrow-1 {
+  clip: rect(0px, 600px, 60px, 0px);
+}
+.smooth-effect.backward.bellow .smooth-item#arrow-1 {
+  transition-delay: 0s;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  -o-transition-delay: 0s;
+}
+.smooth-effect.above .smooth-item#arrow-1 {
+  transition-delay: 300ms;
+  -webkit-transition-delay: 300ms;
+  -moz-transition-delay: 300ms;
+  -ms-transition-delay: 300ms;
+  -o-transition-delay: 300ms;
+  transition-duration: 100ms;
+  -webkit-transition-duration: 100ms;
+  -moz-transition-duration: 100ms;
+  -ms-transition-duration: 100ms;
+  -o-transition-duration: 100ms;
+}
+.smooth-effect .smooth-item#arrow-2 {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  clip: rect(0px, 140px, 70px, 140px);
+  transition-delay: 1300ms;
+  -webkit-transition-delay: 1300ms;
+  -moz-transition-delay: 1300ms;
+  -ms-transition-delay: 1300ms;
+  -o-transition-delay: 1300ms;
+  transition-duration: 200ms;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -ms-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+}
+.smooth-effect.show .smooth-item#arrow-2 {
+  clip: rect(0px, 140px, 70px, 0px);
+}
+.smooth-effect.backward.bellow .smooth-item#arrow-2 {
+  transition-delay: 0s;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  -o-transition-delay: 0s;
+}
+.smooth-effect.above .smooth-item#arrow-2 {
+  transition-delay: 100ms;
+  -webkit-transition-delay: 100ms;
+  -moz-transition-delay: 100ms;
+  -ms-transition-delay: 100ms;
+  -o-transition-delay: 100ms;
+  transition-duration: 100ms;
+  -webkit-transition-duration: 100ms;
+  -moz-transition-duration: 100ms;
+  -ms-transition-duration: 100ms;
+  -o-transition-duration: 100ms;
+}
+.smooth-effect .smooth-item#arrow-3 {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  clip: rect(0px, 140px, 70px, 140px);
+  transition-delay: 1400ms;
+  -webkit-transition-delay: 1400ms;
+  -moz-transition-delay: 1400ms;
+  -ms-transition-delay: 1400ms;
+  -o-transition-delay: 1400ms;
+  transition-duration: 100ms;
+  -webkit-transition-duration: 100ms;
+  -moz-transition-duration: 100ms;
+  -ms-transition-duration: 100ms;
+  -o-transition-duration: 100ms;
+}
+.smooth-effect.show .smooth-item#arrow-3 {
+  clip: rect(0px, 140px, 70px, 0px);
+}
+.smooth-effect.backward.bellow .smooth-item#arrow-3 {
+  transition-delay: 0s;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  -o-transition-delay: 0s;
+}
+.smooth-effect.above .smooth-item#arrow-3 {
+  transition-delay: 0s;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-duration: 100ms;
+  -webkit-transition-duration: 100ms;
+  -moz-transition-duration: 100ms;
+  -ms-transition-duration: 100ms;
+  -o-transition-duration: 100ms;
 }
