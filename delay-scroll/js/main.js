@@ -42,8 +42,13 @@ function moveSections(isMoveForward) {
             });
         }, 100 * timingIndex + (isMoveForward ? 0 : 100));
         setTimeout(function () {
+            var bottom = ((currentSection - index) * 90 + 10) + 'vh';
+            // Last section has full height
+            if (currentSection == sections.length - 1 && index == currentSection) {
+                bottom = 0;
+            }
             $(section).css({
-                bottom: ((currentSection - index) * 90 + 10) + 'vh'
+                bottom: bottom
             });
         }, 100 * timingIndex + (isMoveForward ? 100 : 0))
     });
@@ -74,7 +79,9 @@ function moveSections(isMoveForward) {
 
     // Update section positions
     $sections.each(function (index, section) {
-        $(section).removeClass('show');
+        if ([].indexOf.call($sections, section) != index) {
+            $(section).removeClass('show');
+        }
 
         if (index < currentSection) {
             $(section).addClass('above');
@@ -87,6 +94,11 @@ function moveSections(isMoveForward) {
             $(section).removeClass('bellow');
         }
     });
+
+    // Update hash tag and highlight menu
+    location.hash = sections[currentSection];
+    $('#menu').find('a').removeClass('active');
+    $('a[href=#' + sections[currentSection] + ']').addClass('active');
 }
 
 function next() {
@@ -104,8 +116,8 @@ function previous() {
     }
 }
 function moveToSectionId(id) {
-    var currentSessionId = "section" + (currentSection + 1);
-    var isMoveForward = getElementPosition(sections, currentSessionId, id) == 'right';
+    var isMoveForward = getElementPosition(sections,
+            sections[currentSection], id) == 'right';
     previousSection = currentSection;
     currentSection = [].indexOf.call(sections, id);
     moveSections(isMoveForward);
@@ -150,14 +162,15 @@ $(function () {
     sections = $sections.map(function (index, el) {
         return el.id;
     });
+    currentSection = [].indexOf.call(sections, location.hash.replace('#', ''));
+    if (currentSection == -1) currentSection = 0;
 
     // Setup for first load
     disableAnimation();
     moveSections();
-    setTimeout(function() {
-        enableAnimation();
-        handleHashChange();
-    }, 1000);
+    handleHashChange();
+    $('body').show();
+    enableAnimation();
 
     // Bind events
     $(window).on('hashchange', handleHashChange);

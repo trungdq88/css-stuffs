@@ -12,6 +12,18 @@ body {
   margin: 0;
 }
 
+.fancy-timing-function-2() {
+  -webkit-transition: all 700ms cubic-bezier(0.670, 0.290, 0.150, 0.760);
+  -moz-transition: all 700ms cubic-bezier(0.670, 0.290, 0.150, 0.760);
+  -o-transition: all 700ms cubic-bezier(0.670, 0.290, 0.150, 0.760);
+  transition: all 700ms cubic-bezier(0.670, 0.290, 0.150, 0.760); /* custom */
+
+  -webkit-transition-timing-function: cubic-bezier(0.670, 0.290, 0.150, 0.760);
+  -moz-transition-timing-function: cubic-bezier(0.670, 0.290, 0.150, 0.760);
+  -o-transition-timing-function: cubic-bezier(0.670, 0.290, 0.150, 0.760);
+  transition-timing-function: cubic-bezier(0.670, 0.290, 0.150, 0.760); /* custom */
+}
+
 .fancy-timing-function() {
   -webkit-transition: all 1000ms cubic-bezier(0.745, 0, 0.220, 0.995); /* older webkit */
   -webkit-transition: all 1000ms cubic-bezier(0.745, -0.015, 0.220, 0.995);
@@ -44,7 +56,6 @@ body {
 
 // Page
 @header-height: 50px;
-@section-height: 700px;
 @section-1-color: #6dcff6;
 @section-2-color: #c4df9b;
 @section-3-color: #ff6a72;
@@ -102,9 +113,8 @@ ul#menu {
       color: #000;
       font-size: 19px;
       padding: 0 15px;
-
-      &:hover {
-        color: #555555;
+      &.active {
+        color: #FF6565;
       }
     }
   }
@@ -333,21 +343,30 @@ section {
 }
 
 .smooth-item-delay-loop(@counter) when (@counter > 0) {
-  .smooth-item-delay-loop((@counter - 1));    // next iteration
+  .smooth-item-delay-loop((@counter - 1));
   &.delay-@{counter} {
-    .transition-delay(80ms * @counter); // code for each iteration
+    .transition-delay(80ms * @counter);
+    &.double-delay {
+      .transition-delay(160ms * @counter);
+    }
   }
 }
 .smooth-item-delay-loop-backward(@counter) when (@counter > 0) {
   .smooth-item-delay-loop-backward((@counter - 1));    // next iteration
   &.delay-@{counter} {
-    .transition-delay(800 - 80ms * @counter); // code for each iteration
+    .transition-delay(800 - 80ms * @counter);
+    &.double-delay {
+      .transition-delay(640 - 160ms * @counter); // 640 = 4 * 160ms, we only have 4 double-delay item
+    }
   }
 }
+
+@max-smooth-item: 10;
+
 .smooth-item {
-  .fancy-timing-function();
+  .fancy-timing-function-2();
   .force-new-layer();
-  .smooth-item-delay-loop(10);
+  .smooth-item-delay-loop(@max-smooth-item);
 
 }
 
@@ -376,7 +395,7 @@ section {
     transform: translate3d(0, 0, 0);
   }
   &.backward .smooth-item {
-    .smooth-item-delay-loop-backward(10);
+    .smooth-item-delay-loop-backward(@max-smooth-item);
   }
 
 }

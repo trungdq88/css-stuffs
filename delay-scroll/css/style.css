@@ -57,8 +57,8 @@ ul#menu li a {
   font-size: 19px;
   padding: 0 15px;
 }
-ul#menu li a:hover {
-  color: #555555;
+ul#menu li a.active {
+  color: #FF6565;
 }
 section {
   text-align: center;
@@ -286,19 +286,15 @@ section {
   transform: translate3d(0, 0, 0);
 }
 .smooth-item {
-  -webkit-transition: all 1000ms cubic-bezier(0.745, 0, 0.22, 0.995);
-  /* older webkit */
-  -webkit-transition: all 1000ms cubic-bezier(0.745, -0.015, 0.22, 0.995);
-  -moz-transition: all 1000ms cubic-bezier(0.745, -0.015, 0.22, 0.995);
-  -o-transition: all 1000ms cubic-bezier(0.745, -0.015, 0.22, 0.995);
-  transition: all 1000ms cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  -webkit-transition: all 700ms cubic-bezier(0.67, 0.29, 0.15, 0.76);
+  -moz-transition: all 700ms cubic-bezier(0.67, 0.29, 0.15, 0.76);
+  -o-transition: all 700ms cubic-bezier(0.67, 0.29, 0.15, 0.76);
+  transition: all 700ms cubic-bezier(0.67, 0.29, 0.15, 0.76);
   /* custom */
-  -webkit-transition-timing-function: cubic-bezier(0.745, 0, 0.22, 0.995);
-  /* older webkit */
-  -webkit-transition-timing-function: cubic-bezier(0.745, -0.015, 0.22, 0.995);
-  -moz-transition-timing-function: cubic-bezier(0.745, -0.015, 0.22, 0.995);
-  -o-transition-timing-function: cubic-bezier(0.745, -0.015, 0.22, 0.995);
-  transition-timing-function: cubic-bezier(0.745, -0.015, 0.22, 0.995);
+  -webkit-transition-timing-function: cubic-bezier(0.67, 0.29, 0.15, 0.76);
+  -moz-transition-timing-function: cubic-bezier(0.67, 0.29, 0.15, 0.76);
+  -o-transition-timing-function: cubic-bezier(0.67, 0.29, 0.15, 0.76);
+  transition-timing-function: cubic-bezier(0.67, 0.29, 0.15, 0.76);
   /* custom */
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
@@ -313,12 +309,26 @@ section {
   -ms-transition-delay: 80ms;
   -o-transition-delay: 80ms;
 }
+.smooth-item.delay-1.double-delay {
+  transition-delay: 160ms;
+  -webkit-transition-delay: 160ms;
+  -moz-transition-delay: 160ms;
+  -ms-transition-delay: 160ms;
+  -o-transition-delay: 160ms;
+}
 .smooth-item.delay-2 {
   transition-delay: 160ms;
   -webkit-transition-delay: 160ms;
   -moz-transition-delay: 160ms;
   -ms-transition-delay: 160ms;
   -o-transition-delay: 160ms;
+}
+.smooth-item.delay-2.double-delay {
+  transition-delay: 320ms;
+  -webkit-transition-delay: 320ms;
+  -moz-transition-delay: 320ms;
+  -ms-transition-delay: 320ms;
+  -o-transition-delay: 320ms;
 }
 .smooth-item.delay-3 {
   transition-delay: 240ms;
@@ -327,12 +337,26 @@ section {
   -ms-transition-delay: 240ms;
   -o-transition-delay: 240ms;
 }
+.smooth-item.delay-3.double-delay {
+  transition-delay: 480ms;
+  -webkit-transition-delay: 480ms;
+  -moz-transition-delay: 480ms;
+  -ms-transition-delay: 480ms;
+  -o-transition-delay: 480ms;
+}
 .smooth-item.delay-4 {
   transition-delay: 320ms;
   -webkit-transition-delay: 320ms;
   -moz-transition-delay: 320ms;
   -ms-transition-delay: 320ms;
   -o-transition-delay: 320ms;
+}
+.smooth-item.delay-4.double-delay {
+  transition-delay: 640ms;
+  -webkit-transition-delay: 640ms;
+  -moz-transition-delay: 640ms;
+  -ms-transition-delay: 640ms;
+  -o-transition-delay: 640ms;
 }
 .smooth-item.delay-5 {
   transition-delay: 400ms;
@@ -341,12 +365,26 @@ section {
   -ms-transition-delay: 400ms;
   -o-transition-delay: 400ms;
 }
+.smooth-item.delay-5.double-delay {
+  transition-delay: 800ms;
+  -webkit-transition-delay: 800ms;
+  -moz-transition-delay: 800ms;
+  -ms-transition-delay: 800ms;
+  -o-transition-delay: 800ms;
+}
 .smooth-item.delay-6 {
   transition-delay: 480ms;
   -webkit-transition-delay: 480ms;
   -moz-transition-delay: 480ms;
   -ms-transition-delay: 480ms;
   -o-transition-delay: 480ms;
+}
+.smooth-item.delay-6.double-delay {
+  transition-delay: 960ms;
+  -webkit-transition-delay: 960ms;
+  -moz-transition-delay: 960ms;
+  -ms-transition-delay: 960ms;
+  -o-transition-delay: 960ms;
 }
 .smooth-item.delay-7 {
   transition-delay: 560ms;
@@ -355,12 +393,26 @@ section {
   -ms-transition-delay: 560ms;
   -o-transition-delay: 560ms;
 }
+.smooth-item.delay-7.double-delay {
+  transition-delay: 1120ms;
+  -webkit-transition-delay: 1120ms;
+  -moz-transition-delay: 1120ms;
+  -ms-transition-delay: 1120ms;
+  -o-transition-delay: 1120ms;
+}
 .smooth-item.delay-8 {
   transition-delay: 640ms;
   -webkit-transition-delay: 640ms;
   -moz-transition-delay: 640ms;
   -ms-transition-delay: 640ms;
   -o-transition-delay: 640ms;
+}
+.smooth-item.delay-8.double-delay {
+  transition-delay: 1280ms;
+  -webkit-transition-delay: 1280ms;
+  -moz-transition-delay: 1280ms;
+  -ms-transition-delay: 1280ms;
+  -o-transition-delay: 1280ms;
 }
 .smooth-item.delay-9 {
   transition-delay: 720ms;
@@ -369,12 +421,26 @@ section {
   -ms-transition-delay: 720ms;
   -o-transition-delay: 720ms;
 }
+.smooth-item.delay-9.double-delay {
+  transition-delay: 1440ms;
+  -webkit-transition-delay: 1440ms;
+  -moz-transition-delay: 1440ms;
+  -ms-transition-delay: 1440ms;
+  -o-transition-delay: 1440ms;
+}
 .smooth-item.delay-10 {
   transition-delay: 800ms;
   -webkit-transition-delay: 800ms;
   -moz-transition-delay: 800ms;
   -ms-transition-delay: 800ms;
   -o-transition-delay: 800ms;
+}
+.smooth-item.delay-10.double-delay {
+  transition-delay: 1600ms;
+  -webkit-transition-delay: 1600ms;
+  -moz-transition-delay: 1600ms;
+  -ms-transition-delay: 1600ms;
+  -o-transition-delay: 1600ms;
 }
 .smooth-effect.above .smooth-item {
   -webkit-transform: translate3d(0, -1000px, 0);
@@ -404,12 +470,26 @@ section {
   -ms-transition-delay: 720ms;
   -o-transition-delay: 720ms;
 }
+.smooth-effect.backward .smooth-item.delay-1.double-delay {
+  transition-delay: 480ms;
+  -webkit-transition-delay: 480ms;
+  -moz-transition-delay: 480ms;
+  -ms-transition-delay: 480ms;
+  -o-transition-delay: 480ms;
+}
 .smooth-effect.backward .smooth-item.delay-2 {
   transition-delay: 640ms;
   -webkit-transition-delay: 640ms;
   -moz-transition-delay: 640ms;
   -ms-transition-delay: 640ms;
   -o-transition-delay: 640ms;
+}
+.smooth-effect.backward .smooth-item.delay-2.double-delay {
+  transition-delay: 320ms;
+  -webkit-transition-delay: 320ms;
+  -moz-transition-delay: 320ms;
+  -ms-transition-delay: 320ms;
+  -o-transition-delay: 320ms;
 }
 .smooth-effect.backward .smooth-item.delay-3 {
   transition-delay: 560ms;
@@ -418,12 +498,26 @@ section {
   -ms-transition-delay: 560ms;
   -o-transition-delay: 560ms;
 }
+.smooth-effect.backward .smooth-item.delay-3.double-delay {
+  transition-delay: 160ms;
+  -webkit-transition-delay: 160ms;
+  -moz-transition-delay: 160ms;
+  -ms-transition-delay: 160ms;
+  -o-transition-delay: 160ms;
+}
 .smooth-effect.backward .smooth-item.delay-4 {
   transition-delay: 480ms;
   -webkit-transition-delay: 480ms;
   -moz-transition-delay: 480ms;
   -ms-transition-delay: 480ms;
   -o-transition-delay: 480ms;
+}
+.smooth-effect.backward .smooth-item.delay-4.double-delay {
+  transition-delay: 0ms;
+  -webkit-transition-delay: 0ms;
+  -moz-transition-delay: 0ms;
+  -ms-transition-delay: 0ms;
+  -o-transition-delay: 0ms;
 }
 .smooth-effect.backward .smooth-item.delay-5 {
   transition-delay: 400ms;
@@ -432,12 +526,26 @@ section {
   -ms-transition-delay: 400ms;
   -o-transition-delay: 400ms;
 }
+.smooth-effect.backward .smooth-item.delay-5.double-delay {
+  transition-delay: -160ms;
+  -webkit-transition-delay: -160ms;
+  -moz-transition-delay: -160ms;
+  -ms-transition-delay: -160ms;
+  -o-transition-delay: -160ms;
+}
 .smooth-effect.backward .smooth-item.delay-6 {
   transition-delay: 320ms;
   -webkit-transition-delay: 320ms;
   -moz-transition-delay: 320ms;
   -ms-transition-delay: 320ms;
   -o-transition-delay: 320ms;
+}
+.smooth-effect.backward .smooth-item.delay-6.double-delay {
+  transition-delay: -320ms;
+  -webkit-transition-delay: -320ms;
+  -moz-transition-delay: -320ms;
+  -ms-transition-delay: -320ms;
+  -o-transition-delay: -320ms;
 }
 .smooth-effect.backward .smooth-item.delay-7 {
   transition-delay: 240ms;
@@ -446,12 +554,26 @@ section {
   -ms-transition-delay: 240ms;
   -o-transition-delay: 240ms;
 }
+.smooth-effect.backward .smooth-item.delay-7.double-delay {
+  transition-delay: -480ms;
+  -webkit-transition-delay: -480ms;
+  -moz-transition-delay: -480ms;
+  -ms-transition-delay: -480ms;
+  -o-transition-delay: -480ms;
+}
 .smooth-effect.backward .smooth-item.delay-8 {
   transition-delay: 160ms;
   -webkit-transition-delay: 160ms;
   -moz-transition-delay: 160ms;
   -ms-transition-delay: 160ms;
   -o-transition-delay: 160ms;
+}
+.smooth-effect.backward .smooth-item.delay-8.double-delay {
+  transition-delay: -640ms;
+  -webkit-transition-delay: -640ms;
+  -moz-transition-delay: -640ms;
+  -ms-transition-delay: -640ms;
+  -o-transition-delay: -640ms;
 }
 .smooth-effect.backward .smooth-item.delay-9 {
   transition-delay: 80ms;
@@ -460,10 +582,24 @@ section {
   -ms-transition-delay: 80ms;
   -o-transition-delay: 80ms;
 }
+.smooth-effect.backward .smooth-item.delay-9.double-delay {
+  transition-delay: -800ms;
+  -webkit-transition-delay: -800ms;
+  -moz-transition-delay: -800ms;
+  -ms-transition-delay: -800ms;
+  -o-transition-delay: -800ms;
+}
 .smooth-effect.backward .smooth-item.delay-10 {
   transition-delay: 0ms;
   -webkit-transition-delay: 0ms;
   -moz-transition-delay: 0ms;
   -ms-transition-delay: 0ms;
   -o-transition-delay: 0ms;
+}
+.smooth-effect.backward .smooth-item.delay-10.double-delay {
+  transition-delay: -960ms;
+  -webkit-transition-delay: -960ms;
+  -moz-transition-delay: -960ms;
+  -ms-transition-delay: -960ms;
+  -o-transition-delay: -960ms;
 }
