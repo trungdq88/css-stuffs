@@ -42,11 +42,11 @@ function moveSections(isMoveForward) {
             });
         }, 100 * timingIndex + (isMoveForward ? 0 : 100));
         setTimeout(function () {
-            var bottom = ((currentSection - index) * 90 + 10) + 'vh';
+             var bottom = ((currentSection - index) * 100) + 'vh';
             // Last section has full height
-            if (currentSection == sections.length - 1 && index == currentSection) {
-                bottom = 0;
-            }
+            // if (currentSection == sections.length - 1 && index == currentSection) {
+            //     bottom = 0;
+            // }
             $(section).css({
                 bottom: bottom
             });
