@@ -10,7 +10,25 @@
 body {
   padding: 0;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
 }
+
+::-webkit-input-placeholder {
+  color: #747476;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: #747476;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  color: #747476;
+}
+
+:-ms-input-placeholder {
+  color: #747476;
+}
+
 .no-animate {
   -webkit-transition: none;
   -moz-transition: none  ;
@@ -69,7 +87,7 @@ body {
 }
 
 // Page
-@header-height: 50px;
+@header-height: 80px;
 @section-1-color: #6dcff6;
 @section-2-color: #c4df9b;
 @section-3-color: #ff6a72;
@@ -91,7 +109,7 @@ header {
   right: 0;
   height: @header-height;
   background-color: rgba(255,255,255,0.5);
-  padding: 0 70px;
+  padding: 0 100px;
   z-index: @zindex-header;
   .force-new-layer();
   #brand {
@@ -125,8 +143,8 @@ ul#menu {
       height: @header-height;
       line-height: @header-height;
       color: #000;
-      font-size: 19px;
-      padding: 0 15px;
+      font-size: 28px;
+      padding: 0 19px;
       &.active {
         color: #FF6565;
       }
@@ -136,9 +154,12 @@ ul#menu {
 
 section {
   text-align: center;
-  padding: 80px 0;
-  bottom: 0vh;
+  padding-top: 165px;
+  bottom: 0;
   overflow: hidden;
+  &.type2 {
+    padding-top: 120px;
+  }
   &.no-animate {
     .no-animate();
   }
@@ -147,16 +168,20 @@ section {
     margin: 0 auto;
     font-size: 60px;
     width: 900px;
+    &.type2 {
+      font-size: 45px;
+      margin: 17px auto 0;
+    }
   }
   h2 {
     font-family: 'montserratlight', serif;
     color: #fff;
-    margin: 0 auto;
+    margin: 10px auto 0;
     font-size: 24px;
-    width: 800px;
+    width: 860px;
     opacity: 0.8;
     &.type2 {
-      color: #000;
+      font-size: 29px;
     }
   }
 
@@ -183,32 +208,45 @@ section {
 }
 
 .cols {
-  margin: 50px auto 10px;
+  margin: 48px auto 10px;
   display: flex;
   justify-content: center;
   .col {
-    margin: 0 44px;
+    margin: 0 35px;
     &.type2 {
       width: 300px;
-      margin: 0 10px;
+      margin: 30px 10px 0;
     }
     p {
       font-family: 'montserratregular', serif;
       color: #fff;
-      font-size: 18px;
+      font-size: 19px;
+      margin: 27px 0;
     }
   }
 }
 
-.head-line {
+p.small-heading {
+  font-family: 'montserratregular', serif;
+  font-size: 21px;
+  margin-bottom: 4px !important;
+}
+p.head-line {
   text-transform: uppercase;
   color: #000;
   font-family: 'montserratregular', serif;
+  font-size: 24px !important;
+  margin-top: 32px !important;
 }
-.description {
-  font-family: 'montserratlight', serif;
+p.description {
+  font-family: 'montserratlight', serif !important;
   color: #000;
-  font-size: 15px;
+  font-size: 17px;
+  margin: 15px 0;
+  width: 270px;
+  text-align: center;
+  margin-left: auto !important;
+  margin-right: auto !important;
   &.narrow {
     width: 600px;
     margin: 100px auto;
@@ -217,8 +255,12 @@ section {
 .white {
   color: #fff !important;
 }
+.black {
+  color: #000 !important;
+}
 .img-wrapper {
   @img-size: 150px;
+  @img-size-2: 215px;
   height: @img-size;
   width: @img-size;
   border-radius: @img-size / 2;
@@ -228,10 +270,16 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   border: 3px solid #fff;
+  &.type2 {
+    height: @img-size-2;
+    width: @img-size-2;
+    border-radius: @img-size-2 / 2;
+  }
 }
 
 .input-box {
-  @input-height: 72px;
+  @input-height: 70px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   input[type=text] {
@@ -241,7 +289,8 @@ section {
     line-height: @input-height;
     padding: 0 20px;
     border-radius: 10px 0 0 10px;
-    width: 500px;
+    width: 507px;
+    font-size: 19.6px;
     font-family: 'montserratlight', serif;
     &:focus {
       outline: 0;
@@ -249,6 +298,7 @@ section {
   }
   button {
     border: 0;
+    font-size: 20px;
     height: @input-height;
     line-height: @input-height;
     padding: 0 20px;
@@ -312,11 +362,11 @@ section {
     }
     &#block-1 {
       left: @journey-width / 4 - @block-size / 2;
-      top: 2 * @journey-height / 5 - @block-size / 2;
+      top: 2.2 * @journey-height / 5 - @block-size / 2;
     }
     &#block-2 {
       left: 3 * @journey-width / 4 - @block-size / 2;
-      top: 2 * @journey-height / 5 - @block-size / 2;
+      top: 2.2 * @journey-height / 5 - @block-size / 2;
     }
     &#block-3 {
       left: @journey-width / 2 - @block-size / 2;
